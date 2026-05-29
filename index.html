@@ -327,6 +327,34 @@
       padding: 18px 18px 18px 0;
     }
     .signal:nth-child(odd) { border-right: 1px solid var(--line); margin-right: 18px; }
+    .pain-metrics {
+      display: grid;
+      gap: 12px;
+      grid-template-columns: repeat(4, 1fr);
+      margin-top: 30px;
+    }
+    .pain-metric {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      min-height: 126px;
+      padding: 19px 17px;
+    }
+    .pain-metric strong {
+      color: var(--ink);
+      display: block;
+      font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+      font-size: clamp(24px, 3vw, 34px);
+      font-weight: 400;
+      letter-spacing: -.05em;
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+    .pain-metric span {
+      color: var(--muted);
+      display: block;
+      font-size: 13px;
+      line-height: 1.4;
+    }
     .about {
       background: var(--paper);
       border-bottom: 1px solid var(--line);
@@ -468,6 +496,31 @@
       line-height: 1.62;
       margin: 0;
     }
+    .miss-visual {
+      display: grid;
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .miss-row {
+      align-items: center;
+      border: 1px solid var(--line);
+      display: grid;
+      gap: 12px;
+      grid-template-columns: 88px 1fr;
+      min-height: 54px;
+      padding: 10px 12px;
+    }
+    .miss-row b {
+      color: var(--brass);
+      font-size: 11px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .miss-row span {
+      color: var(--ink-soft);
+      font-size: 14px;
+      line-height: 1.35;
+    }
     .panel {
       background: var(--white);
       border: 1px solid var(--line);
@@ -539,6 +592,21 @@
       margin-bottom: 34px;
     }
     .service p { font-size: 14px; line-height: 1.57; margin: 0; }
+    .service-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+    .service-tags span {
+      border: 1px solid var(--line);
+      color: var(--ink-soft);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      padding: 7px 9px;
+      text-transform: uppercase;
+    }
     .outcomes {
       background: var(--white);
     }
@@ -565,6 +633,15 @@
       margin-bottom: 6px;
     }
     .outcome p { font-size: 14px; margin: 0; }
+    .outcome-mark {
+      color: var(--brass);
+      display: block;
+      font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+      font-size: 42px;
+      letter-spacing: -.06em;
+      line-height: .9;
+      margin-bottom: 12px;
+    }
     .industries {
       border-top: 1px solid var(--line);
       color: var(--muted);
@@ -725,6 +802,7 @@
     }
     @media (max-width: 820px) {
       .recognition-grid, .about-grid, .section-heading, .outcome-layout, .method-layout, .split, .miss-grid { grid-template-columns: 1fr; }
+      .pain-metrics { grid-template-columns: repeat(2, 1fr); }
       .section-heading { gap: 20px; }
       .section-heading p { padding-top: 0; }
       .chain { grid-template-columns: 1fr; }
@@ -750,6 +828,7 @@
       .hero-caption, .service .number, .method-step::before, .testimonial cite, .testimonial-note, footer { font-size: 15px; }
       .signal, .about-point, .chain-step p, .impact-item, .miss-card p, .industries { font-size: 17px; line-height: 1.65; }
       .signals, .about-points, .outcome-grid, .services-grid { grid-template-columns: 1fr; }
+      .pain-metrics { grid-template-columns: 1fr; }
       .signal:nth-child(odd), .service { border-right: 0; margin-right: 0; }
       .service { min-height: 0; }
       .industries { word-spacing: 4px; }
@@ -801,7 +880,7 @@
       <div class="hero-content reveal">
         <span class="eyebrow">Organizational Performance &amp; Execution</span>
         <h1>Execution breakdowns are more expensive than they look.</h1>
-        <p class="hero-lead">The missed handoff, the delayed decision, the unresolved performance issue, the priority that keeps coming back to the table. Bullard Business Execution helps organizations identify and remove the leadership behaviors that drive up costs and erode culture.</p>
+        <p class="hero-lead">Missed handoffs. Delayed decisions. Recurring priorities. Bullard Business Execution helps organizations find and remove the patterns driving up cost and eroding culture.</p>
         <div class="hero-actions">
           <a class="button light" href="#cost">Recognize the Cost</a>
           <a class="button ghost" href="#services">Explore the Work</a>
@@ -823,14 +902,20 @@
           <h2>Your organization may already be paying for the breakdowns everyone has learned to work around.</h2>
         </div>
         <div class="reveal">
-          <p class="lead">A delayed decision looks like an operational issue. A leader unable to delegate looks like a capacity issue. Tolerated underperformance looks like a productivity issue. The symptoms appear across the business; the source is often left untouched because people have gotten used to compensating for it.</p>
+          <p class="lead">The symptoms show up across the business. The source is often left untouched because people have learned to compensate for it.</p>
           <div class="signals" aria-label="Organizational warning signals">
-            <div class="signal">Senior leaders keep getting pulled into work that should move without them</div>
-            <div class="signal">The same priorities keep coming back to the table with no clear owner or next move</div>
-            <div class="signal">Accountability depends on which manager, function, or meeting is involved</div>
-            <div class="signal">People know who is underperforming, but the issue keeps being managed around</div>
-            <div class="signal">Teams wait for permission because authority is unclear or inconsistently used</div>
-            <div class="signal">Customers feel inconsistency that began as an internal leadership pattern</div>
+            <div class="signal">Senior leaders pulled into work that should move without them</div>
+            <div class="signal">Priorities return with no clear owner or next move</div>
+            <div class="signal">Accountability varies by manager, function, or meeting</div>
+            <div class="signal">Underperformance is managed around, not resolved</div>
+            <div class="signal">Teams wait because authority is unclear</div>
+            <div class="signal">Customers feel internal inconsistency</div>
+          </div>
+          <div class="pain-metrics" aria-label="Execution breakdown costs">
+            <div class="pain-metric"><strong>Time</strong><span>Lost in stalled decisions and repeat conversations</span></div>
+            <div class="pain-metric"><strong>Margin</strong><span>Consumed by rework, escalation, and slow response</span></div>
+            <div class="pain-metric"><strong>Culture</strong><span>Weakened by tolerated gaps and unclear standards</span></div>
+            <div class="pain-metric"><strong>Scale</strong><span>Limited by work that cannot move without executives</span></div>
           </div>
         </div>
       </div>
@@ -843,28 +928,28 @@
             <span class="eyebrow">The Economic Logic</span>
             <h2 id="cost-title">Leadership patterns create operational and financial consequences.</h2>
           </div>
-          <p>Slow decisions, unclear ownership, inconsistent standards, and repeated escalation do not stay contained. They become lost capacity, avoidable inefficiency, slower response, missed opportunity, customer inconsistency, margin pressure, and constrained growth.</p>
+          <p>The business feels the pattern long before anyone names it. Execution slows, cost accumulates, and culture absorbs the strain.</p>
         </div>
         <div class="chain reveal" aria-label="Leadership patterns to financial consequences">
           <article class="chain-step">
             <small>01</small>
             <strong>Leadership patterns</strong>
-            <p>Avoidance, weak delegation, delayed authority, unclear standards, or tolerated underperformance.</p>
+            <p>Avoidance. Weak delegation. Unclear standards.</p>
           </article>
           <article class="chain-step">
             <small>02</small>
             <strong>Execution slows</strong>
-            <p>Bottlenecks deepen, decisions stall, rework increases, and ownership becomes uncertain.</p>
+            <p>Bottlenecks. Rework. Escalation.</p>
           </article>
           <article class="chain-step">
             <small>03</small>
             <strong>Performance erodes</strong>
-            <p>Productivity, consistency, responsiveness, trust, and usable capacity decline.</p>
+            <p>Less speed. Less consistency. Less trust.</p>
           </article>
           <article class="chain-step">
             <small>04</small>
             <strong>Cost accumulates</strong>
-            <p>Time, margin, retention, culture, scalability, customer experience, and competitive position are put at risk.</p>
+            <p>Time, margin, culture, and scale at risk.</p>
           </article>
         </div>
       </div>
@@ -877,24 +962,36 @@
             <span class="eyebrow">The Miss</span>
             <h2 id="miss-title">Most organizations try to fix execution where the symptom appears.</h2>
           </div>
-          <p>That is why the problem keeps coming back. The meeting, dashboard, process, or reorganization may be useful, but it cannot carry weight the leadership system has not been built to hold.</p>
+          <p>The visible problem is rarely the whole problem. The source is usually one level deeper.</p>
         </div>
         <div class="miss-grid">
           <article class="miss-card reveal">
-            <strong>The symptom is delayed decisions.</strong>
-            <p>The usual fix is more reporting. The missed source is often unclear authority, avoided tradeoffs, or decisions that never truly leave the senior team.</p>
+            <strong>Delayed decisions</strong>
+            <div class="miss-visual">
+              <div class="miss-row"><b>Added</b><span>More reporting</span></div>
+              <div class="miss-row"><b>Missing</b><span>Clear authority and tradeoffs</span></div>
+            </div>
           </article>
           <article class="miss-card reveal">
-            <strong>The symptom is recurring priorities.</strong>
-            <p>The usual fix is another meeting. The missed source is ownership that was never specific, durable, or strong enough to survive normal pressure.</p>
+            <strong>Recurring priorities</strong>
+            <div class="miss-visual">
+              <div class="miss-row"><b>Added</b><span>Another meeting</span></div>
+              <div class="miss-row"><b>Missing</b><span>Durable ownership</span></div>
+            </div>
           </article>
           <article class="miss-card reveal">
-            <strong>The symptom is inconsistent performance.</strong>
-            <p>The usual fix is tighter tracking. The missed source is standards that are understood privately but not enforced early, clearly, and consistently.</p>
+            <strong>Inconsistent performance</strong>
+            <div class="miss-visual">
+              <div class="miss-row"><b>Added</b><span>Tighter tracking</span></div>
+              <div class="miss-row"><b>Missing</b><span>Standards enforced early</span></div>
+            </div>
           </article>
           <article class="miss-card reveal">
-            <strong>The symptom is executive overload.</strong>
-            <p>The usual fix is adding people or process. The missed source is authority that has not been distributed with enough clarity for others to carry the work.</p>
+            <strong>Executive overload</strong>
+            <div class="miss-visual">
+              <div class="miss-row"><b>Added</b><span>People or process</span></div>
+              <div class="miss-row"><b>Missing</b><span>Distributed authority</span></div>
+            </div>
           </article>
         </div>
       </div>
@@ -925,7 +1022,7 @@
           </article>
         </div>
         <blockquote class="analogy reveal">Adding systems, people, or new processes without first addressing the underlying behaviors is like replacing the engine while the parking brake is still engaged.
-          <span>More capacity has been purchased. Forward movement is still constrained by the same source condition.</span>
+          <span>More capacity. Same constraint.</span>
         </blockquote>
       </div>
     </section>
@@ -937,33 +1034,38 @@
             <span class="eyebrow">Core Services</span>
             <h2 id="services-title">Work designed for execution, not theory.</h2>
           </div>
-          <p>Engagements focus on the conditions that decide whether work moves: decision quality, accountability, delegation, ownership, standards, follow-through, and durable operating capacity.</p>
+          <p>Engagements focus on the conditions that decide whether work moves.</p>
         </div>
         <div class="services-grid">
           <article class="service reveal">
             <span class="number">01</span>
             <h3>Strategic Initiative Execution</h3>
-            <p>Moving priorities from recurring discussion into ownership, measurable action, and forward movement.</p>
+            <p>From recurring discussion to owned movement.</p>
+            <div class="service-tags"><span>Ownership</span><span>Action</span><span>Cadence</span></div>
           </article>
           <article class="service reveal">
             <span class="number">02</span>
             <h3>Organizational Effectiveness</h3>
-            <p>Identifying the behavioral and organizational patterns constraining performance.</p>
+            <p>Finding what constrains performance.</p>
+            <div class="service-tags"><span>Patterns</span><span>Capacity</span><span>Flow</span></div>
           </article>
           <article class="service reveal">
             <span class="number">03</span>
             <h3>Leadership Capability Development</h3>
-            <p>Equipping leaders to strengthen accountability, delegation, standards, and organizational capacity.</p>
+            <p>Strengthening the behaviors execution requires.</p>
+            <div class="service-tags"><span>Standards</span><span>Delegation</span><span>Accountability</span></div>
           </article>
           <article class="service reveal">
             <span class="number">04</span>
             <h3>Executive Coaching</h3>
-            <p>Addressing the patterns affecting how senior leaders communicate, decide, delegate, and execute.</p>
+            <p>Improving how senior leaders decide and delegate.</p>
+            <div class="service-tags"><span>Decision</span><span>Authority</span><span>Follow-through</span></div>
           </article>
           <article class="service reveal">
             <span class="number">05</span>
             <h3>Accountability &amp; Ownership Systems</h3>
-            <p>Establishing clearer standards, stronger follow-through, and more consistent ownership.</p>
+            <p>Making ownership visible and durable.</p>
+            <div class="service-tags"><span>Clarity</span><span>Standards</span><span>Rhythm</span></div>
           </article>
         </div>
       </div>
@@ -978,28 +1080,34 @@
         <div>
           <div class="outcome-grid">
             <article class="outcome reveal">
+              <span class="outcome-mark">01</span>
               <strong>Faster execution</strong>
-              <p>Priorities advance with clearer ownership and fewer stalled decisions.</p>
+              <p>Fewer stalled decisions</p>
             </article>
             <article class="outcome reveal">
+              <span class="outcome-mark">02</span>
               <strong>Stronger accountability</strong>
-              <p>Standards and follow-through become more consistent across leaders.</p>
+              <p>More consistent standards</p>
             </article>
             <article class="outcome reveal">
+              <span class="outcome-mark">03</span>
               <strong>Better delegation</strong>
-              <p>Capacity increases as decision-making moves to the right level.</p>
+              <p>Decisions at the right level</p>
             </article>
             <article class="outcome reveal">
+              <span class="outcome-mark">04</span>
               <strong>Operational consistency</strong>
-              <p>Teams deliver with greater reliability across functions and customers.</p>
+              <p>More reliable delivery</p>
             </article>
             <article class="outcome reveal">
+              <span class="outcome-mark">05</span>
               <strong>Leadership pipeline strength</strong>
-              <p>Leaders develop the posture and judgment required for expanded responsibility.</p>
+              <p>More leaders ready to carry weight</p>
             </article>
             <article class="outcome reveal">
+              <span class="outcome-mark">06</span>
               <strong>Improved scalability</strong>
-              <p>Organizational performance is less dependent on constant executive intervention.</p>
+              <p>Less executive intervention</p>
             </article>
           </div>
           <p class="industries reveal">Manufacturing &nbsp; Healthcare &nbsp; Financial Services &nbsp; Municipalities &nbsp; Hospitality &nbsp; Logistics &nbsp; Automotive &nbsp; Technology &nbsp; Professional Services &nbsp; Private Equity-Backed Organizations</p>
@@ -1014,19 +1122,19 @@
             <span class="eyebrow">Testimonials</span>
             <h2 id="testimonials-title">What leaders notice when the real execution problem gets named.</h2>
           </div>
-          <p>Draft testimonial language based on the kind of municipal execution work discussed for Garland. These should be replaced with approved quotes before the page is published.</p>
+          <p>Draft proof points for municipal execution work. Replace with approved quotes before final publication.</p>
         </div>
         <div class="testimonial-grid">
           <article class="testimonial reveal">
-            <blockquote>"The biggest shift was clarity. We stopped talking around the same issues and started naming the ownership, standards, and follow-through required to move the work."</blockquote>
+            <blockquote>"We stopped circling the same issues and named the ownership required to move."</blockquote>
             <cite>Draft testimonial language<br>Municipal leadership participant</cite>
           </article>
           <article class="testimonial reveal">
-            <blockquote>"This made the hidden cost visible. The delays were not just process problems. They were leadership patterns showing up as missed handoffs, escalation, and rework."</blockquote>
+            <blockquote>"The hidden cost became visible: missed handoffs, escalation, and rework."</blockquote>
             <cite>Draft testimonial language<br>City department leader</cite>
           </article>
           <article class="testimonial reveal">
-            <blockquote>"The work gave us a practical way to connect behavior to results. It helped leaders see where accountability was breaking down and what had to change for execution to improve."</blockquote>
+            <blockquote>"Leaders could see where accountability was breaking down and what had to change."</blockquote>
             <cite>Draft testimonial language<br>Garland municipal engagement</cite>
           </article>
         </div>
@@ -1039,35 +1147,35 @@
         <div class="reveal">
           <span class="eyebrow">How The Work Moves</span>
           <h2 id="work-title">Address the behavior producing the business consequence.</h2>
-          <p class="method-intro">The work focuses on the leadership patterns and organizational behaviors that determine whether accountability holds, decisions move, and capability expands.</p>
+          <p class="method-intro">The work targets the patterns that determine whether accountability holds and decisions move.</p>
           <div class="multiplier">
             <strong>Leadership Multiplier Effect</strong>
-            <p>When one pivotal leader changes how standards are enforced, authority is delegated, and difficult issues are addressed, adjacent leaders begin operating differently. Leadership change can increase capability throughout the organization.</p>
+            <p>When one pivotal leader changes standards, authority, and follow-through, adjacent leaders begin operating differently.</p>
           </div>
         </div>
         <div class="method-steps reveal">
           <article class="method-step">
             <div>
               <h3>Identify where execution is slowing</h3>
-              <p>Clarify where execution is slowing, accountability is weakening, and senior involvement is masking capacity limits.</p>
+              <p>Find the slowdown, weak accountability, and executive dependency.</p>
             </div>
           </article>
           <article class="method-step">
             <div>
               <h3>Expose the operating pattern</h3>
-              <p>Connect visible operational symptoms to the leadership pattern, decision posture, and organizational habit sustaining them.</p>
+              <p>Connect the symptom to the pattern sustaining it.</p>
             </div>
           </article>
           <article class="method-step">
             <div>
               <h3>Change what drives performance</h3>
-              <p>Strengthen ownership, delegation, standards, difficult conversations, and leadership consistency where execution depends on them.</p>
+              <p>Strengthen ownership, delegation, standards, and consistency.</p>
             </div>
           </article>
           <article class="method-step">
             <div>
               <h3>Expand organizational capacity</h3>
-              <p>Reinforce behavior that enables faster action, stronger managers, and performance that scales beyond individual effort.</p>
+              <p>Build performance that scales beyond individual effort.</p>
             </div>
           </article>
         </div>
@@ -1078,8 +1186,8 @@
       <div class="shell reveal">
         <span class="eyebrow">Executive Conversation</span>
         <h2 id="conversation-title">The cost of inaction is already in the operation.</h2>
-        <p class="lead">If accountability is inconsistent, execution is slowing, or executive involvement keeps increasing, the right conversation is not about another layer of process. It is about the behavior limiting organizational performance.</p>
-        <p class="conversation-note">Begin with a focused conversation about where execution is slowing, what it is costing, and what must change for performance to move.</p>
+        <p class="lead">If accountability is inconsistent or executive involvement keeps increasing, the answer is probably not another layer of process.</p>
+        <p class="conversation-note">Start with where execution is slowing, what it costs, and what must change.</p>
       </div>
     </section>
 
@@ -1091,8 +1199,8 @@
         <div class="about-copy reveal">
           <span class="eyebrow">About Kevin Bullard</span>
           <h2 id="about-title">I help leaders connect execution problems to the patterns producing them.</h2>
-          <p class="lead">I work with leaders who can feel that something is slowing the organization down, but do not yet have a clean way to name it. The symptoms are familiar: stalled decisions, recurring priorities, inconsistent accountability, senior leaders pulled too far into the work, and culture absorbing the cost.</p>
-          <p>My experience sits at the intersection of leadership, operations, accountability, and organizational performance. The work is practical: clarify ownership, strengthen standards, distribute authority, address what has been tolerated, and build the conditions for execution to move.</p>
+          <p class="lead">I work with leaders who can feel something slowing the organization down, but do not yet have a clean way to name it.</p>
+          <p>My experience sits at the intersection of leadership, operations, accountability, and organizational performance. The work is practical: clarify ownership, strengthen standards, distribute authority, and build conditions for execution to move.</p>
           <div class="about-points" aria-label="About Kevin Bullard focus areas">
             <div class="about-point"><strong>Execution diagnosis.</strong> Naming the problem leaders have been working around but not resolving.</div>
             <div class="about-point"><strong>Operational accountability.</strong> Connecting leadership patterns to operational and financial consequences.</div>
