@@ -334,8 +334,10 @@
       padding: clamp(22px, 4vw, 34px);
     }
     .cost-chart-title {
+      align-items: flex-end;
       color: var(--ink);
       display: flex;
+      gap: 24px;
       font-size: 13px;
       font-weight: 800;
       justify-content: space-between;
@@ -343,11 +345,17 @@
       margin-bottom: 22px;
       text-transform: uppercase;
     }
+    .cost-chart-title span:last-child {
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: .12em;
+      text-align: right;
+    }
     .bar-row {
       align-items: center;
       display: grid;
       gap: 14px;
-      grid-template-columns: 96px 1fr 44px;
+      grid-template-columns: 96px 1fr 58px;
       margin: 15px 0;
     }
     .bar-label {
@@ -372,6 +380,14 @@
       font-size: 13px;
       font-weight: 800;
       text-align: right;
+    }
+    .cost-chart-note {
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.55;
+      margin: 22px 0 0;
+      padding-top: 16px;
     }
     .about {
       background: var(--paper);
@@ -606,7 +622,7 @@
       letter-spacing: .18em;
       margin-bottom: 34px;
     }
-    .service p { font-size: 14px; line-height: 1.57; margin: 0; }
+    .service p { font-size: 15px; line-height: 1.6; margin: 0; }
     .service-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
     .service-tags span {
       border: 1px solid var(--line);
@@ -919,12 +935,13 @@
             <div class="signal">Teams wait because authority is unclear</div>
             <div class="signal">Customers feel internal inconsistency</div>
           </div>
-          <div class="cost-chart" aria-label="Relative cost pressure from execution breakdowns">
-            <div class="cost-chart-title"><span>Cost pressure</span><span>Relative load</span></div>
-            <div class="bar-row"><span class="bar-label">Time</span><span class="bar-track"><span class="bar-fill" style="--value: 92%;"></span></span><span class="bar-value">92</span></div>
-            <div class="bar-row"><span class="bar-label">Margin</span><span class="bar-track"><span class="bar-fill" style="--value: 78%;"></span></span><span class="bar-value">78</span></div>
-            <div class="bar-row"><span class="bar-label">Culture</span><span class="bar-track"><span class="bar-fill" style="--value: 84%;"></span></span><span class="bar-value">84</span></div>
-            <div class="bar-row"><span class="bar-label">Scale</span><span class="bar-track"><span class="bar-fill" style="--value: 70%;"></span></span><span class="bar-value">70</span></div>
+          <div class="cost-chart" aria-label="Where execution breakdowns create business pressure">
+            <div class="cost-chart-title"><span>Where the cost shows up</span><span>Higher bar = more pressure</span></div>
+            <div class="bar-row"><span class="bar-label">Time</span><span class="bar-track"><span class="bar-fill" style="--value: 92%;"></span></span><span class="bar-value">High</span></div>
+            <div class="bar-row"><span class="bar-label">Margin</span><span class="bar-track"><span class="bar-fill" style="--value: 78%;"></span></span><span class="bar-value">High</span></div>
+            <div class="bar-row"><span class="bar-label">Culture</span><span class="bar-track"><span class="bar-fill" style="--value: 84%;"></span></span><span class="bar-value">High</span></div>
+            <div class="bar-row"><span class="bar-label">Scale</span><span class="bar-track"><span class="bar-fill" style="--value: 70%;"></span></span><span class="bar-value">Rising</span></div>
+            <p class="cost-chart-note">This is not a scorecard. It shows where execution breakdowns usually become visible first: lost time, margin leakage, culture strain, and limits on growth.</p>
           </div>
         </div>
       </div>
@@ -1030,25 +1047,25 @@
             <span class="eyebrow">Core Services</span>
             <h2 id="services-title">Work designed for execution, not theory.</h2>
           </div>
-          <p>Engagements focus on the conditions that decide whether work moves.</p>
+          <p>The work is grouped by what is blocking execution: unclear ownership, hidden constraints, or leaders who need more capacity to carry standards, decisions, and follow-through.</p>
         </div>
         <div class="services-grid" aria-label="Service areas grouped by execution need">
           <article class="service reveal">
             <span class="number">01</span>
             <h3>Move the Work</h3>
-            <p>Strategic initiatives, accountability systems, ownership, action, and cadence.</p>
+            <p>For strategic priorities that keep returning to the table. We clarify the owner, the next decision, the operating cadence, and the follow-through required to create movement.</p>
             <div class="service-tags"><span>Initiatives</span><span>Ownership</span><span>Follow-through</span></div>
           </article>
           <article class="service reveal">
             <span class="number">02</span>
             <h3>Find the Constraint</h3>
-            <p>Organizational effectiveness and performance diagnosis.</p>
+            <p>For organizations that can feel the slowdown but cannot yet name the source. We diagnose where patterns, authority, standards, or structure are holding performance back.</p>
             <div class="service-tags"><span>Patterns</span><span>Capacity</span></div>
           </article>
           <article class="service reveal">
             <span class="number">03</span>
             <h3>Build Leader Capacity</h3>
-            <p>Standards, delegation, decision quality, and executive coaching.</p>
+            <p>For teams that need stronger delegation, decision quality, accountability, and executive coaching so more work can move without constant senior intervention.</p>
             <div class="service-tags"><span>Delegation</span><span>Decisions</span><span>Standards</span></div>
           </article>
         </div>
