@@ -829,6 +829,57 @@
     .conversation-cta {
       margin-top: 25px;
     }
+    .contact-form {
+      background: var(--white);
+      border: 1px solid var(--line);
+      display: grid;
+      gap: 14px;
+      margin: 34px auto 0;
+      max-width: 720px;
+      padding: clamp(22px, 4vw, 34px);
+      text-align: left;
+    }
+    .contact-form h3 {
+      margin-bottom: 0;
+    }
+    .contact-form p {
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 6px;
+    }
+    .form-row {
+      display: grid;
+      gap: 14px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .contact-form label {
+      color: var(--ink-soft);
+      display: grid;
+      font-size: 13px;
+      font-weight: 700;
+      gap: 6px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      color: var(--ink);
+      font: inherit;
+      min-height: 48px;
+      padding: 11px 12px;
+      text-transform: none;
+    }
+    .contact-form textarea {
+      min-height: 132px;
+      resize: vertical;
+    }
+    .form-note {
+      color: var(--muted);
+      font-size: 13px;
+      margin: 2px 0 0;
+    }
     footer {
       background: var(--night);
       color: #bab8b1;
@@ -928,7 +979,7 @@
       .hero-lead, .lead { font-size: 18px; line-height: 1.7; }
       .hero-caption, .service .number, .method-step::before, .testimonial cite, .testimonial-note, footer { font-size: 15px; }
       .signal, .about-point, .chain-step p, .industries { font-size: 17px; line-height: 1.65; }
-      .signals, .about-points, .cost-points, .services-grid { grid-template-columns: 1fr; }
+      .signals, .about-points, .cost-points, .services-grid, .form-row { grid-template-columns: 1fr; }
       .cost-point:not(:last-child) { border-right: 0; margin-right: 0; }
       .signal:nth-child(odd), .service { border-right: 0; margin-right: 0; }
       .service { min-height: 0; }
@@ -1261,6 +1312,32 @@
         <p class="lead">If accountability is inconsistent or executive involvement keeps increasing, the answer is probably not another layer of process.</p>
         <p class="conversation-note">Start with where execution is slowing, what it costs, and what must change.</p>
         <a class="button diagnosis conversation-cta" href="https://bullard-business-execution.ninjapipe.app/book/bullard-business-execution/edc">Get a Diagnosis</a>
+        <form class="contact-form" action="https://formspree.io/f/REPLACE_WITH_FORM_ID" method="POST">
+          <h3>Send a confidential note</h3>
+          <p>Use this form to describe what is slowing execution. Messages should route to Bullard Business Execution once a secure form endpoint is connected.</p>
+          <div class="form-row">
+            <label>Name
+              <input type="text" name="name" autocomplete="name" required>
+            </label>
+            <label>Work Email
+              <input type="email" name="email" autocomplete="email" required>
+            </label>
+          </div>
+          <div class="form-row">
+            <label>Organization
+              <input type="text" name="organization" autocomplete="organization">
+            </label>
+            <label>Role
+              <input type="text" name="role" autocomplete="organization-title">
+            </label>
+          </div>
+          <label>What is breaking down?
+            <textarea name="message" required></textarea>
+          </label>
+          <input type="hidden" name="_subject" value="Bullard Business Execution Website Inquiry">
+          <button class="button diagnosis" type="submit">Send Message</button>
+          <p class="form-note">This form is prepared for a secure form endpoint. Do not include confidential client information until the endpoint is connected.</p>
+        </form>
       </div>
     </section>
 
@@ -1302,7 +1379,6 @@
         <a href="terms.html">Terms</a>
       </div>
       <div class="footer-contact" aria-label="Business contact information">
-        <a href="mailto:kevin@bullardbusinessexecution.com">kevin@bullardbusinessexecution.com</a>
         <a href="https://www.linkedin.com/in/kevinbullard">LinkedIn</a>
       </div>
       <p class="footer-rights">&copy;2006 All Rights Reserved. Bullard Business Execution.</p>
