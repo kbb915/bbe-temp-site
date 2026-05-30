@@ -833,17 +833,21 @@
       background: var(--night);
       color: #bab8b1;
       font-size: 13px;
-      padding: 31px 0;
+      padding: 40px 0;
     }
     .footer-inner {
-      align-items: center;
+      align-items: flex-start;
       display: flex;
-      gap: 30px;
+      gap: 22px 34px;
       justify-content: space-between;
+      flex-wrap: wrap;
     }
     .footer-links {
       display: flex;
-      gap: 23px;
+      flex-wrap: wrap;
+      gap: 12px 22px;
+      justify-content: flex-end;
+      max-width: 650px;
     }
     .footer-links a:hover { color: var(--brass-light); }
     .footer-contact {
@@ -854,7 +858,7 @@
       flex-wrap: wrap;
       gap: 12px 22px;
       font-size: 13px;
-      margin-top: 6px;
+      margin-top: 10px;
       padding-top: 18px;
     }
     .footer-contact a:hover { color: var(--brass-light); }
@@ -863,7 +867,7 @@
       flex-basis: 100%;
       font-size: 12px;
       letter-spacing: .04em;
-      margin: 6px 0 0;
+      margin: 10px 0 0;
     }
     .js .reveal {
       opacity: 0;
@@ -1291,7 +1295,7 @@
         <a href="#services">Services</a>
         <a href="#outcomes">Outcomes</a>
         <a href="#testimonials">Testimonials</a>
-        <a href="#work">How the Work Moves</a>
+        <a href="#work">Method</a>
         <a href="#conversation">Conversation</a>
         <a href="#about">About</a>
         <a href="privacy.html">Privacy</a>
@@ -1299,8 +1303,6 @@
       </div>
       <div class="footer-contact" aria-label="Business contact information">
         <a href="mailto:kevin@bullardbusinessexecution.com">kevin@bullardbusinessexecution.com</a>
-        <span>DFW Metroplex</span>
-        <span>Serving organizations beyond North Texas</span>
         <a href="https://www.linkedin.com/in/kevinbullard">LinkedIn</a>
       </div>
       <p class="footer-rights">&copy;2006 All Rights Reserved. Bullard Business Execution.</p>
