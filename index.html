@@ -742,23 +742,37 @@
       height: 14px;
       width: var(--value);
     }
-    .industries {
+    .experience-environments {
       border-top: 1px solid var(--line);
-      color: var(--muted);
-      display: grid;
-      font-size: 13px;
-      gap: 14px 18px;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      letter-spacing: .08em;
-      line-height: 1.35;
       margin-top: 52px;
       padding-top: 25px;
-      text-transform: uppercase;
-      text-align: center;
     }
-    .industries span {
+    .experience-environments h3 {
+      color: var(--ink);
+      font-size: clamp(24px, 2.5vw, 32px);
+      margin-bottom: 12px;
+    }
+    .experience-environments p {
+      color: var(--ink-soft);
+      font-size: 16px;
+      line-height: 1.66;
+      margin-bottom: 20px;
+      max-width: 820px;
+    }
+    .environment-list {
+      display: grid;
+      gap: 14px 18px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .environment-list span {
       border: 1px solid rgba(52, 83, 100, .18);
+      color: var(--muted);
+      font-size: 13px;
+      letter-spacing: .08em;
+      line-height: 1.35;
       padding: 9px 10px;
+      text-align: center;
+      text-transform: uppercase;
       white-space: nowrap;
     }
     .testimonials {
@@ -1001,12 +1015,12 @@
       p, .service p, .outcome p, .method-step p, .multiplier p, .conversation-note { font-size: 17px; line-height: 1.68; }
       .hero-lead, .lead { font-size: 18px; line-height: 1.7; }
       .hero-caption, .service .number, .method-step::before, .testimonial cite, .testimonial-note, footer { font-size: 15px; }
-      .signal, .about-point, .chain-step p, .industries { font-size: 17px; line-height: 1.65; }
+      .signal, .about-point, .chain-step p, .environment-list { font-size: 17px; line-height: 1.65; }
       .signals, .about-points, .cost-points, .services-grid { grid-template-columns: 1fr; }
       .cost-point:not(:last-child) { border-right: 0; margin-right: 0; }
       .signal:nth-child(odd), .service { border-right: 0; margin-right: 0; }
       .service { min-height: 0; }
-      .industries { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .environment-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .footer-inner { align-items: flex-start; flex-direction: column; }
       .footer-links { flex-direction: column; gap: 13px; }
       .footer-contact { flex-direction: column; gap: 9px; }
@@ -1259,22 +1273,17 @@
             <div class="outcome-bar"><strong>Operational consistency</strong><span style="--value: 82%;"></span></div>
             <div class="outcome-bar"><strong>Improved scalability</strong><span style="--value: 72%;"></span></div>
           </div>
-        <p class="industries reveal">
-          <span>Manufacturing</span>
-          <span>Healthcare</span>
-          <span>Banking</span>
-          <span>Municipalities</span>
-          <span>Hospitality</span>
-          <span>Logistics</span>
-          <span>Automotive</span>
-          <span>Technology</span>
-          <span>Professional</span>
-          <span>Private Equity</span>
-          <span>Non-Profits</span>
-          <span>Airlines</span>
-          <span>Paramilitary</span>
-          <span>Faith-Based</span>
-        </p>
+          <div class="experience-environments reveal">
+            <h3>Experience Across Serious Operating Environments</h3>
+            <p>Kevin&rsquo;s work has supported leaders and teams across retail, manufacturing, nonprofits, education, and municipal government, including work connected to organizations such as...</p>
+            <div class="environment-list" aria-label="Organization types Kevin has served">
+              <span>Retail</span>
+              <span>Manufacturing</span>
+              <span>Nonprofits</span>
+              <span>Education</span>
+              <span>Municipal Government</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
